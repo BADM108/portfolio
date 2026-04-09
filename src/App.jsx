@@ -135,7 +135,7 @@ function App() {
         <header className="pt-16 pb-12 flex flex-col md:flex-row items-center gap-12 text-left">
            <div className="relative group">
                <div className="absolute -inset-2 bg-white/5 rounded-[45px] blur-2xl opacity-50" />
-               <img src="./src/assets/pfp.jpg" alt="Profile" className="w-44 h-44 md:w-56 md:h-56 object-cover rounded-[40px] border border-white/10 grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl" />
+               <img src={profilePic} alt="Profile" className="w-44 h-44 md:w-56 md:h-56 object-cover rounded-[40px] border border-white/10 grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl" />
            </div>
            <div className="flex flex-col">
              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-[0.85] mb-4">B.A.D <br/><span className="text-white/20">Methyuga.</span></h1>
