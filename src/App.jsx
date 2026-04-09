@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import LiquidParticles from './components/liquidParticles'
 import { getNowPlaying } from './spotify';
+import profilePic from './assets/pfp.jpg';
 
 // --- Icons (Simple SVG library for the Skills section) ---
 const Icons = {
