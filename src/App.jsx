@@ -184,17 +184,17 @@ export default function App() {
             className="h-36 w-36 rounded-3xl border border-white/10 object-cover shadow-2xl grayscale transition-[filter] duration-700 hover:grayscale-0 md:h-52 md:w-52"
           />
           <div>
-            <p className={`${labelClass} mb-4 tracking-[0.3em]`} style={{ color: '#3b3b3b' }}>
+            <p className={`${labelClass} mb-4 tracking-[0.3em]`} style={{ color: '#aeb6c4' }}>
               {HERO.role}
             </p>
             <h1
               className="text-4xl font-bold leading-[1.02] tracking-tight text-white md:text-7xl"
-              style={{ color: '#3b3b3b' }}
+              style={{ color: '#b7bfcc' }}
             >
-              <span style={{ color: '#4a4a4a' }}>{HERO.name}</span>{' '}
-              <span style={{ color: 'rgba(59, 59, 59, 0.7)' }}>{HERO.surname}</span>
+              <span style={{ color: '#c8ced8' }}>{HERO.name}</span>{' '}
+              <span style={{ color: 'rgba(183, 191, 204, 0.72)' }}>{HERO.surname}</span>
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-steel md:text-lg" style={{ color: '#3b3b3b' }}>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-steel md:text-lg" style={{ color: '#aeb6c4' }}>
               {HERO.tagline}
             </p>
           </div>
