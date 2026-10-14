@@ -1,33 +1,74 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-/* This is where we define your Liquid Metal colors for the new version */
 @theme {
-  --color-metal-dark: #121212;
-  --color-metal-gray: #222222;
-  --color-metal-silver: #e0e0e0;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-ink: #07080a;
+  --color-steel: #aeb6c4;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
-  background-color: var(--color-metal-dark);
-  color: var(--color-metal-silver);
-  font-family: sans-serif;
+  margin: 0;
+  background-color: var(--color-ink);
+  color: #e6e9ef;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar styling */
-.scrollable-content::-webkit-scrollbar {
-  width: 8px;
+::selection {
+  background: rgb(255 255 255 / 0.2);
 }
 
-.scrollable-content::-webkit-scrollbar-track {
-  background: transparent;
+/* Glass panel. Blur is kept moderate on purpose: a huge blur over an animated
+   WebGL background is re-computed every frame and is the main cause of lag. */
+@layer components {
+  .panel {
+    background: rgb(8 9 12 / 0.6);
+    border: 1px solid rgb(255 255 255 / 0.08);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
-.scrollable-content::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+/* Tab content entrance. Replaces the old animate-in classes, which did nothing
+   because the tailwindcss-animate plugin was never installed. */
+@keyframes tab-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tab-in {
+  animation: tab-in 450ms cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-.scrollable-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+/* Spotify equalizer bars */
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-in,
+  .eq-bar {
+    animation: none;
+  }
 }
